@@ -5,7 +5,7 @@ export const SITE: SiteConfig = {
     author: "Jan Doležil",
     desc: "Personal portfolio of Jan Doležil.",
     title: "Jan Doležil",
-    ogImage: "shannon.webp",
+    ogImage: "https://dolezj47-82bfc8.pages.fel.cvut.cz/fotka.jpg",
     postPerPage: 5,
     favicon: "/favicon.svg",
     lang: "en",
@@ -18,9 +18,9 @@ export const THEME_CONFIG: ThemeConfig = {
 };
 
 export const SETTINGS: SettingsConfig = {
-    showTagsInNavbar: true,
-    showRSSInFooter: true,
-    addDevToolsInProduction: true,
+    showTagsInNavbar: false,
+    showRSSInFooter: false,
+    addDevToolsInProduction: false,
 };
 
 const umami: UmamiAnalyticsConfig = {

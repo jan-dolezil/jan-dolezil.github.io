@@ -1,31 +1,22 @@
 ---
-name: "Claude Shannon"
-title: "Mathematician and Electrical Engineer"
+name: "Jan Doležil"
+title: ""
 experience:
-  - role: "Research Mathematician"
-    institution: "Bell Telephone Laboratories"
-    period: "1941 - 1972"
-    description: "Conducted groundbreaking research in information theory, cryptography, and digital computing."
-  - role: "Professor of Electrical Engineering"
-    institution: "MIT"
-    period: "1958 - 1978"
-    description: "Taught courses in information theory, switching theory, and mathematical foundations of computing."
+  - role: "Lecture"
+    institution: "Masarykovo klasické gymnázium Říčany"
+    period: "2023 - 2026"
+    description: "Supervised informatics course and led a robotics club"
 education:
-  - degree: "PhD in Mathematics"
-    institution: "MIT"
-    period: "1936 - 1940"
-    thesis: "An Algebra for Theoretical Genetics"
-    description: "Developed mathematical foundations for genetic inheritance."
-  - degree: "Bachelor of Science in Electrical Engineering"
-    institution: "University of Michigan"
-    period: "1932 - 1936"
+  - degree: "Bc. in Electrical Engineering"
+    institution: "CTU FEE"
+    period: "2023 - 2026"
+    thesis: "Impact of Camera Parameter Variations on Monocular Depth Prediction"
+
 ---
 
 ## Skills
-- Information Theory
-- Mathematics
+- Python 
 - Electrical Engineering
-- Cryptography
 - Computer Science
 
 ## Biographical Summary
