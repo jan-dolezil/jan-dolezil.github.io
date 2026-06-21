@@ -1,7 +1,7 @@
 ---
 name: "Jan Doležil"
-avatar: "shannon.jpg"
-shortBio: "Mathematician and electrical engineer known as the 'Father of Information Theory'. Pioneer in digital computing and cryptography."
+avatar: "jandolezil.jpg"
+shortBio: "short bio todo"
 institution: "CTU FEE"
 ---
 

@@ -2,7 +2,7 @@
 name: "Jan Doležil"
 title: ""
 experience:
-  - role: "Lecture"
+  - role: "Lecturer"
     institution: "Masarykovo klasické gymnázium Říčany"
     period: "2023 - 2026"
     description: "Supervised informatics course and led a robotics club"
