@@ -15,9 +15,11 @@ education:
 ---
 
 ## Skills
-- Python 
-- Electrical Engineering
-- Computer Science
+- Python, Pytorch, OpenCV, Numpy
+- C
+- Matlab, Simulink
+- English (C1), Czech (Native), German (Conversational)
+
 
 ## Biographical Summary
-Extra biographical notes or a summary can go here.
+Working towards a Ing. degree in Cybernetics and Robotics at CTU FEE, with a focus on Computer vision and control theory. Experienced in teaching informatics and leading a robotics club.  
