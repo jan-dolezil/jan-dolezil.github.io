@@ -1,7 +1,7 @@
 ---
 name: "Jan Doležil"
 avatar: "jandolezil.jpg"
-shortBio: "short bio todo"
+shortBio: "I study Cybernetics and Robotics at CTU FEE with a focus on AI and Computer Vision."
 institution: "CTU FEE"
 ---
 
@@ -11,13 +11,13 @@ Hello human!
 
 Born i guess.
 
-## Current Work
-No work :D 
+[## Current Work]: #
+[No work :D ]: #
 
 ## Research Interests
 
 My research focus includes:
+ - Monocular Depth Estimation
+ - Dense Prediction Tasks
 
 ---
-
-*"Hehe"*
