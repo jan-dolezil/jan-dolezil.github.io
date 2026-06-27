@@ -21,5 +21,5 @@ education:
 - English (C1), Czech (Native), German (Conversational)
 
 
-## Biographical Summary
-Working towards a Ing. degree in Cybernetics and Robotics at CTU FEE, with a focus on Computer vision and control theory. Experienced in teaching informatics and leading a robotics club.
+[## Biographical Summary
+Working towards a Ing. degree in Cybernetics and Robotics at CTU FEE, with a focus on Computer vision and control theory. Experienced in teaching informatics and leading a robotics club.]: #
