@@ -22,4 +22,4 @@ education:
 
 
 ## Biographical Summary
-Working towards a Ing. degree in Cybernetics and Robotics at CTU FEE, with a focus on Computer vision and control theory. Experienced in teaching informatics and leading a robotics club.  
+Working towards a Ing. degree in Cybernetics and Robotics at CTU FEE, with a focus on Computer vision and control theory. Experienced in teaching informatics and leading a robotics club.
