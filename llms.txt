@@ -1,0 +1,46 @@
+# Jan Doležil
+
+> Cybernetics & Robotics student at CTU in Prague. Computer vision,
+> monocular depth estimation. Online CV, projects and contact.
+
+Homepage: https://jan-dolezil.github.io/
+Plain-text mirror of this page: https://jan-dolezil.github.io/about.txt
+
+## About
+
+Jan Doležil is working towards an Ing. (MSc) degree in Cybernetics and
+Robotics at the Czech Technical University in Prague, Faculty of Electrical
+Engineering (CTU FEE).
+
+## Education
+
+- Ing. in Cybernetics and Robotics — CTU FEE, Prague (in progress)
+- Bc. in Electrical Engineering — CTU FEE, Prague, 2023–2026
+  - Thesis: "Impact of Camera Parameter Variations on Monocular Depth Prediction"
+
+## Experience
+
+- Lecturer — Masarykovo klasické gymnázium Říčany, 2023–2026
+  - Supervised the informatics course and led a robotics club.
+
+## Skills
+
+- Programming: Python (PyTorch, OpenCV, NumPy), C, MATLAB / Simulink
+- Languages: Czech (native), English (C1), German (conversational)
+- Interests: computer vision, machine learning, control theory
+
+## Projects
+
+- Smart Bird Feeder — engineering & hardware project:
+  https://dolezj47-82bfc8.pages.fel.cvut.cz/projekty/mainproject.html
+- More code & tinkering: https://github.com/jan-dolezil
+
+## Contact
+
+- E-mail: honza.dolezil@gmail.com
+- GitHub: https://github.com/jan-dolezil
+
+## License
+
+Content on this site is Jan Doležil's own CV information; feel free to quote
+facts with attribution.

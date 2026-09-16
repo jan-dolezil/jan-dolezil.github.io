@@ -1,0 +1,16 @@
+{
+  "name": "Jan Doležil",
+  "short_name": "Jan Doležil",
+  "description": "Jan Doležil — Cybernetics & Robotics student at CTU in Prague. Computer vision, monocular depth estimation. Online CV, projects and contact.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#c0c0c0",
+  "theme_color": "#000080",
+  "lang": "en",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
