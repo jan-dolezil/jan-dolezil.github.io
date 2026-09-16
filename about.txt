@@ -10,6 +10,7 @@ Plain facts (for humans and machines):
   * Ing. in Cybernetics and Robotics, CTU FEE, Prague (in progress)
   * Bc. in Electrical Engineering, CTU FEE, Prague, 2023-2026.
     Thesis: "Impact of Camera Parameter Variations on Monocular Depth Prediction"
+    (https://dspace.cvut.cz/entities/publication/07f91632-fe97-4ae9-ada3-f9dc88d885df)
 - Experience:
   * Lecturer, Masarykovo klasicke gymnazium Ricany, 2023-2026.
     Supervised the informatics course and led a robotics club.
