@@ -62,6 +62,14 @@
         <a href="#projects">Projects</a> |
         <a href="#contact">Contact</a>
       </nav>
+      <p class="ticker-wrap" aria-hidden="true"><span class="ticker"><span>&#9733; HELLO HUMAN &#9733; THIS PAGE NOW 20% FUNNIER &#9733; BEST VIEWED AT 800&times;600 &#9733; NO COOKIES, ONLY CURIOSITY &#9733; MY PHOTO DOES A TRICK IF YOU CLICK IT 5&times; &#9733; TRY THE KONAMI CODE&hellip; &#9733;&nbsp;</span></span></p>
+      <p class="badges" aria-label="Silly badges">
+        <span class="badge">est. 2026</span>
+        <span class="badge hot">NEW!</span>
+        <span class="badge">hand-coded html</span>
+        <span class="badge">no frameworks harmed</span>
+        <span class="badge">under construction-ish</span>
+      </p>
     </header>
 
     <hr>
@@ -133,8 +141,72 @@
     <hr>
 
     <footer>
-      <p>Last updated: 16 September 2026 &middot; &copy; Jan Doležil &middot; <a href="#main">Back to top</a></p>
+      <p class="tiny">You're visitor No. <span class="counter" id="hit-counter">000001</span> <span class="blink">NEW!</span></p>
+      <p class="tiny">This site is <span id="uptime">100%</span> up since you arrived. No frames were harmed. Press <kbd>B</kbd> for <span id="party-label">party mode</span>, press <kbd>U</kbd> to undo it.</p>
+      <p>Last updated: 16 September 2026 &middot; &copy; Jan Doležil &middot; <a href="#main">Back to top</a> &middot; <a href="#main" id="party-link">&#9733; party mode &#9733;</a></p>
     </footer>
   </div>
+  <script>
+  (function () {
+    "use strict";
+    var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Fake hit counter: starts at a fun number, +1 per visit stored locally.
+    try {
+      var n = parseInt(localStorage.getItem("jd-hits") || "13337", 10) + 1;
+      localStorage.setItem("jd-hits", String(n));
+      var el = document.getElementById("hit-counter");
+      if (el) el.textContent = String(n).padStart(6, "0");
+    } catch (e) { /* private mode? still cool */ }
+
+    // Silly uptime ticker: counts seconds since page load.
+    var t0 = Date.now();
+    var upEl = document.getElementById("uptime");
+    setInterval(function () {
+      if (!upEl) return;
+      var s = Math.floor((Date.now() - t0) / 1000);
+      upEl.textContent = "100% for the last " + s + "s";
+    }, 1000);
+
+    // Photo easter egg: click 5x -> one spin (motion-safe).
+    var img = document.querySelector(".site-header img");
+    var clicks = 0;
+    if (img) {
+      img.style.cursor = "pointer";
+      img.title = "psst... click me 5 times";
+      img.addEventListener("click", function () {
+        clicks++;
+        if (clicks >= 5) {
+          clicks = 0;
+          if (reduceMotion) return;
+          img.classList.remove("fun-spin");
+          void img.offsetWidth; // restart animation
+          img.classList.add("fun-spin");
+          setTimeout(function () { img.classList.remove("fun-spin"); }, 700);
+        }
+      });
+    }
+
+    // Party mode: Konami code, "B" key, or footer link. "U" turns it off.
+    var seq = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+    var pos = 0;
+    function toggleParty(force) {
+      var on = typeof force === "boolean" ? force : !document.documentElement.classList.contains("party");
+      document.documentElement.classList.toggle("party", on);
+      var label = document.getElementById("party-label");
+      if (label) label.textContent = on ? "PARTY MODE: ON" : "party mode";
+    }
+    document.addEventListener("keydown", function (ev) {
+      if (ev.target && /^(INPUT|TEXTAREA)$/.test(ev.target.tagName)) return;
+      var k = ev.key.length === 1 ? ev.key.toLowerCase() : ev.key;
+      if (k === "b" && pos === 0) { toggleParty(); return; }
+      if (k === "u" || k === "U") { toggleParty(false); pos = 0; return; }
+      pos = (k === seq[pos]) ? pos + 1 : (k === seq[0] ? 1 : 0);
+      if (pos === seq.length) { toggleParty(true); pos = 0; }
+    });
+    var partyLink = document.getElementById("party-link");
+    if (partyLink) partyLink.addEventListener("click", function (ev) { ev.preventDefault(); toggleParty(); });
+  })();
+  </script>
 </body>
 </html>

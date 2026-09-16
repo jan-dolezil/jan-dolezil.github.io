@@ -1,4 +1,4 @@
-/* One tiny stylesheet, system fonts only, zero bytes of JS on the whole site. */
+/* One tiny stylesheet, system fonts only, one tiny inline script for 90s gimmicks. */
 html {
   background: #008080;
   color: #000;
@@ -48,6 +48,81 @@ img {
 }
 
 nav { font-weight: bold; }
+
+/* --- 90s fun zone (non-intrusive, motion-safe) --- */
+.ticker-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #ff0;
+  border: 2px inset #fff;
+  margin: 0.75rem 0 0;
+  padding: 0.15rem 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+.ticker { display: inline-block; padding-left: 100%; will-change: transform; }
+.ticker span { display: inline-block; padding-right: 2rem; }
+
+img { transition: transform 0.2s steps(3); }
+img:hover { transform: rotate(-0.6deg) scale(1.01); }
+img.fun-spin { transform: rotate(360deg) scale(1.05); transition: transform 0.6s steps(12); }
+
+a:hover { background: #ff0; }
+nav a:hover { display: inline-block; transform: rotate(-2deg); }
+
+h1:hover { letter-spacing: 3px; }
+h1 { transition: letter-spacing 0.2s steps(4); }
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin: 0.75rem 0;
+}
+.badge {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.72rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: #fff;
+  border: 2px outset #fff;
+  padding: 0.1rem 0.4rem;
+}
+.badge.hot { background: #f0f; color: #ff0; }
+
+.tiny { font-size: 0.8rem; }
+kbd {
+  font-family: "Courier New", Courier, monospace;
+  background: #fff;
+  border: 2px outset #fff;
+  padding: 0 0.3rem;
+  font-size: 0.8em;
+}
+
+/* party mode: toggled by konami / B key / 5 photo clicks */
+html.party body { cursor: crosshair; }
+html.party .page { box-shadow: 6px 6px 0 #f0f, 12px 12px 0 #0ff; }
+html.party h1 { color: #f0f; }
+html.party .eyebrow { background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00); background-size: 400% 100%; color: #000; }
+html.party img { border-color: #f0f; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .ticker { animation: ticker-move 22s linear infinite; }
+  .ticker-wrap:hover .ticker { animation-play-state: paused; }
+  html.party .eyebrow { animation: rainbow-slide 3s linear infinite; }
+  html.party h2 { animation: wiggle 0.6s steps(2) infinite; }
+}
+@keyframes ticker-move { to { transform: translateX(-100%); } }
+@keyframes rainbow-slide { to { background-position: 400% 0; } }
+@keyframes wiggle {
+  0% { transform: rotate(-0.4deg); }
+  100% { transform: rotate(0.4deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker { padding-left: 0; }
+}
 
 h2 {
   background: #000080;
