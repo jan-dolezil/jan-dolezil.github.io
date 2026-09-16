@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-fun="on">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +11,20 @@
   <meta name="theme-color" content="#000080">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="stylesheet" href="/style.css">
+  <script>
+  /* 90s-fun kill switch: runs before first paint.
+     Disable via any of: ?fun=off in URL, localStorage jd-fun="off",
+     or editing data-fun="off" on <html>. Enable with ?fun=on. */
+  (function () {
+    try {
+      var q = new URLSearchParams(location.search).get("fun");
+      if (q === "off" || q === "on") localStorage.setItem("jd-fun", q);
+      var fun = localStorage.getItem("jd-fun") || "on";
+      if (q === "off" || q === "on") fun = q;
+      document.documentElement.dataset.fun = fun;
+    } catch (e) { /* storage blocked: default stays "on" */ }
+  })();
+  </script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Jan Doležil">
   <meta property="og:title" content="Jan Doležil — Cybernetics &amp; Robotics, CTU Prague">
@@ -62,8 +76,8 @@
         <a href="#projects">Projects</a> |
         <a href="#contact">Contact</a>
       </nav>
-      <p class="ticker-wrap" aria-hidden="true"><span class="ticker"><span>&#9733; HELLO HUMAN &#9733; THIS PAGE NOW 20% FUNNIER &#9733; BEST VIEWED AT 800&times;600 &#9733; NO COOKIES, ONLY CURIOSITY &#9733; MY PHOTO DOES A TRICK IF YOU CLICK IT 5&times; &#9733; TRY THE KONAMI CODE&hellip; &#9733;&nbsp;</span></span></p>
-      <p class="badges" aria-label="Silly badges">
+      <p class="ticker-wrap fun-only" aria-hidden="true"><span class="ticker"><span>&#9733; HELLO HUMAN &#9733; THIS PAGE NOW 20% FUNNIER &#9733; BEST VIEWED AT 800&times;600 &#9733; NO COOKIES, ONLY CURIOSITY &#9733; MY PHOTO DOES A TRICK IF YOU CLICK IT 5&times; &#9733; TRY THE KONAMI CODE&hellip; &#9733;&nbsp;</span></span></p>
+      <p class="badges fun-only" aria-label="Silly badges">
         <span class="badge">est. 2026</span>
         <span class="badge hot">NEW!</span>
         <span class="badge">hand-coded html</span>
@@ -141,14 +155,26 @@
     <hr>
 
     <footer>
-      <p class="tiny">You're visitor No. <span class="counter" id="hit-counter">000001</span> <span class="blink">NEW!</span></p>
-      <p class="tiny">This site is <span id="uptime">100%</span> up since you arrived. No frames were harmed. Press <kbd>B</kbd> for <span id="party-label">party mode</span>, press <kbd>U</kbd> to undo it.</p>
-      <p>Last updated: 16 September 2026 &middot; &copy; Jan Doležil &middot; <a href="#main">Back to top</a> &middot; <a href="#main" id="party-link">&#9733; party mode &#9733;</a></p>
+      <p class="tiny fun-only">You're visitor No. <span class="counter" id="hit-counter">000001</span> <span class="blink">NEW!</span></p>
+      <p class="tiny fun-only">This site is <span id="uptime">100%</span> up since you arrived. No frames were harmed. Press <kbd>B</kbd> for <span id="party-label">party mode</span>, press <kbd>U</kbd> to undo it.</p>
+      <p>Last updated: 16 September 2026 &middot; &copy; Jan Doležil &middot; <a href="#main">Back to top</a><span class="fun-only"> &middot; <a href="#main" id="party-link">&#9733; party mode &#9733;</a></span> &middot; <a href="?fun=off" id="fun-toggle2">fun: off</a></p>
     </footer>
   </div>
   <script>
+  // Fun toggle link: always active, shows the opposite of current state.
+  (function () {
+    var link = document.getElementById("fun-toggle2");
+    if (!link) return;
+    var off = document.documentElement.dataset.fun === "off";
+    link.setAttribute("href", off ? "?fun=on" : "?fun=off");
+    link.textContent = off ? "fun: on" : "fun: off";
+  })();
+  </script>
+  <script>
   (function () {
     "use strict";
+    // Master kill switch: bail out entirely when fun is off.
+    if (document.documentElement.dataset.fun === "off") return;
     var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     // Fake hit counter: starts at a fun number, +1 per visit stored locally.
